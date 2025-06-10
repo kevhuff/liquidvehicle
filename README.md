@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# H² Automotive
 
-## Getting Started
+Welcome to the official repository for the **H² Automotive** website — a full-service automotive repair shop proudly serving Charleston and the Sissonville area of West Virginia.
 
-First, run the development server:
+## 🚗 About Us
+
+H² Automotive specializes in high-quality, professional automotive repair with:
+
+- Over 20 years of experience
+- ASE certified & factory-trained technicians
+- A focus on import vehicles and performance
+- Honest, reliable service
+
+📍 **Location:**  
+37 Cyan Dr., Charleston, WV 25312
+
+📞 **Call:**  
+(304) 555-1234
+
+---
+
+## 🔧 Services
+
+We offer full-service automotive care including:
+
+- Oil changes
+- Brake work
+- Engine diagnostics
+- Heating/AC repair
+- Complete engine rebuilds
+
+Please call ahead to schedule your appointment.
+
+---
+
+## 💻 Built With
+
+This site is built using:
+
+- [Next.js](https://nextjs.org/) – for fast and SEO-friendly rendering
+- [Tailwind CSS](https://tailwindcss.com/) – for modern, responsive design
+
+---
+
+## 📦 Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Run locally
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
