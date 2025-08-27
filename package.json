@@ -29,3 +29,12 @@
     "typescript": "^5"
   }
 }
+
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "npx serve out",
+    "postbuild": "touch out/.nojekyll"
+  }
+}
