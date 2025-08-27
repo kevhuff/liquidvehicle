@@ -1,4 +1,3 @@
-
 name: Deploy to GitHub Pages
 on:
   push:
@@ -19,8 +18,11 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      - run: npm run build
-      - run: echo www.h2autowv.com > out/CNAME
+      - run: npm run build                      # next build && next export -> out/
+      - run: echo www.h2autowv.com > out/CNAME  # keep domain sticky
+      - run: touch out/.nojekyll                # ensure _next/ is served
+      - run: ls -R out | sed -n '1,200p'        # show what's in out/
+      - run: test -d out/_next/static/css || (echo "NO CSS FOLDER" && exit 1)
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
