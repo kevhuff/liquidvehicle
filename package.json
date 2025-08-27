@@ -5,12 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "start": "next start",
-    "deploy": "gh-pages -d out",
-    "lint": "next lint"
+    "postbuild": "touch out/.nojekyll"
   },
-  "homepage": "https://kevhuff.github.io/liquidvehicle",
-
   "dependencies": {
     "next": "15.3.3",
     "react": "^19.0.0",
@@ -24,17 +20,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
-    "gh-pages": "^6.3.0",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
-}
-
-{
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build && next export",
-    "start": "npx serve out",
-    "postbuild": "touch out/.nojekyll"
   }
 }
