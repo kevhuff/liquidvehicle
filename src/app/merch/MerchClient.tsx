@@ -84,9 +84,10 @@ export default function MerchClient() {
 
           <p className="mt-2 text-zinc-300">
             Online checkout is coming soon — for now, stop by the shop or{" "}
-            <a href="/#contact" className="underline hover:text-yellow-300">
+            {/* ✅ Internal link must use <Link> */}
+            <Link href="/#contact" className="underline hover:text-yellow-300">
               contact us
-            </a>{" "}
+            </Link>{" "}
             to purchase.
           </p>
 
