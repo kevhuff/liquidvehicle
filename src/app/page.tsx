@@ -20,7 +20,7 @@ export default function Home() {
   {/* Logo */}
   <div className="flex-1 flex justify-center md:justify-start">
     <Image
-      src="/h2logo.png"
+      src="/logo.png"
       alt="H² Automotive Logo"
       width={500}
       height={200}
