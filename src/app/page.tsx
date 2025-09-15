@@ -15,28 +15,30 @@ export default function Home() {
       <div className="absolute inset-0 min-h-screen bg-[url('/wht_carbon_mainbg.png')] bg-cover bg-center bg-fixed z-0 pointer-events-none" />
 
       {/* Page content gets top padding to clear fixed navbar */}
-      <div className="relative z-10 bg-black/10 pt-16">
+      <div className="relative z-10 bg-black/10 pt-20">
         {/* ===== NAVBAR ===== */}
         <nav className="fixed top-0 inset-x-0 z-50 bg-black/90 backdrop-blur border-b border-zinc-800">
           <div className="mx-auto max-w-6xl px-4">
-            <div className="flex h-16 items-center justify-between">
-              {/* Logo (top-left on all sizes; fades out on mobile when drawer is open) */}
-              <Link
-                href="/"
-                aria-label="Go to Home"
-                className={`flex items-center transition-opacity duration-300 ${
-                  menuOpen ? "opacity-0 md:opacity-100" : "opacity-100"
-                }`}
-              >
-                <Image
-                  src="/logo.png" // ensure this exists in /public exactly as typed
-                  alt="H² Automotive Logo"
-                  width={200}
-                  height={80}
-                  priority
-                  className="h-10 md:h-12 w-auto object-contain"
-                />
-              </Link>
+            <div className="relative z-50 flex h-20 items-center">
+              {/* Logo centered on mobile, left on desktop */}
+              <div className="flex-1 flex justify-center md:justify-start">
+                <Link
+                  href="/"
+                  aria-label="Go to Home"
+                  className={`flex items-center transition-opacity duration-300 ${
+                    menuOpen ? "opacity-0 md:opacity-100" : "opacity-100"
+                  }`}
+                >
+                  <Image
+                    src="/logo.png"
+                    alt="H² Automotive Logo"
+                    width={200}
+                    height={80}
+                    priority
+                    className="h-16 w-auto object-contain md:h-20"
+                  />
+                </Link>
+              </div>
 
               {/* Desktop links */}
               <div className="hidden md:flex items-center gap-8 text-zinc-300 font-medium tracking-wide uppercase">
@@ -66,7 +68,7 @@ export default function Home() {
               <button
                 onClick={() => setMenuOpen((v) => !v)}
                 aria-label="Toggle menu"
-                className="md:hidden ml-auto h-12 w-12 grid place-items-center text-red-400 hover:text-yellow-400 transition-colors"
+                className="absolute right-4 md:hidden h-12 w-12 grid place-items-center text-red-400 hover:text-yellow-400 transition-colors"
               >
                 <span className="relative block h-5 w-7">
                   <span
@@ -89,76 +91,73 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Mobile overlay + drawer (fixed so it works anywhere on the page) */}
+          {/* Mobile overlay + drawer */}
           <div className={`md:hidden ${menuOpen ? "pointer-events-auto" : "pointer-events-none"}`}>
             {/* Backdrop */}
             <button
               onClick={() => setMenuOpen(false)}
               aria-label="Close menu"
-              className={`fixed inset-0 bg-black/40 transition-opacity ${
+              className={`fixed inset-0 z-10 bg-black/40 transition-opacity ${
                 menuOpen ? "opacity-100" : "opacity-0"
               }`}
             />
             {/* Drawer */}
             <div
-              className={`fixed top-16 inset-x-0 bg-black/95 border-b border-zinc-800 overflow-hidden transform transition-transform duration-500 ease-out ${
+              className={`fixed top-20 inset-x-0 z-20 bg-black/95 border-b border-zinc-800 overflow-hidden transform transition-transform duration-500 ease-out ${
                 menuOpen ? "translate-y-0" : "-translate-y-full"
               }`}
             >
-              <div className="px-4 py-3 space-y-2 text-white">
+              {/* Full-bleed menu with white separators */}
+              <div className="text-white divide-y divide-white/20">
                 <a
                   href="#about"
-                  className="block rounded px-2 py-2 hover:bg-white/5"
+                  className="block px-6 py-3 hover:bg-white/5"
                   onClick={() => setMenuOpen(false)}
                 >
                   About
                 </a>
                 <a
                   href="#services"
-                  className="block rounded px-2 py-2 hover:bg-white/5"
+                  className="block px-6 py-3 hover:bg-white/5"
                   onClick={() => setMenuOpen(false)}
                 >
                   Services
                 </a>
                 <a
                   href="#contact"
-                  className="block rounded px-2 py-2 hover:bg-white/5"
+                  className="block px-6 py-3 hover:bg-white/5"
                   onClick={() => setMenuOpen(false)}
                 >
                   Contact
                 </a>
                 <a
                   href="#events"
-                  className="block rounded px-2 py-2 hover:bg-white/5"
+                  className="block px-6 py-3 hover:bg-white/5"
                   onClick={() => setMenuOpen(false)}
                 >
                   Upcoming Events
                 </a>
                 <Link
                   href="/merch"
-                  className="block rounded px-2 py-2 hover:bg-white/5"
+                  className="block px-6 py-3 hover:bg-white/5"
                   onClick={() => setMenuOpen(false)}
                 >
                   Merch
                 </Link>
+              </div>
 
-                {/* Falling logo under the list */}
-                <div
-                  className={`mt-2 pt-3 border-t border-white/10 flex justify-center transform transition-all duration-500 ease-out ${
-                    menuOpen ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
-                  }`}
-                >
-                  <Link href="/" aria-label="Go to Home" onClick={() => setMenuOpen(false)}>
-                    <Image
-                      src="/logo.png"
-                      alt="H² Automotive Logo"
-                      width={160}
-                      height={64}
-                      priority
-                      className="w-36 sm:w-40 h-auto"
-                    />
-                  </Link>
-                </div>
+              {/* Logo in drawer */}
+              <div className="border-t border-white/10 flex justify-center p-4">
+                <Link href="/" aria-label="Go to Home" onClick={() => setMenuOpen(false)}>
+                  <Image
+                    src="/logo.png"
+                    alt="H² Automotive Logo"
+                    width={200}
+                    height={80}
+                    priority
+                    className="h-16 w-auto object-contain md:h-20"
+                  />
+                </Link>
               </div>
             </div>
           </div>
@@ -332,8 +331,7 @@ export default function Home() {
 
             <p className="text-gray-300">📍 87 Cyan Dr., Charleston, WV 25312</p>
             <p className="text-gray-300 mt-2"> Appointment only </p>
-            <p className="text-gray-300">
-              Mon–Fri: 8am – 6pm</p>
+            <p className="text-gray-300">Mon–Fri: 8am – 6pm</p>
 
             <div className="mt-4 flex flex-wrap gap-3">
               <a
